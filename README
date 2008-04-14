@@ -1,0 +1,15 @@
+This plugin enables you to inject assets to a layout.
+
+  layout.assets << "application.js"
+  layout.assets << "styles.css"
+
+  ie_stylesheet = Stylesheet.new("ie.css")
+  ie_stylesheet.condition = "<= IE 6"
+  layout.assets << ie_stylesheet
+
+That's pretty much it. Those three assets will be injected to your output regardless of the layout you are using.
+
+Oh, you can specify default assets in your environment:
+
+  Layout::Base.default_assets = %w{application.js styles.css}
+
